@@ -38,6 +38,7 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "AppContainer";
             this.Text = "AppContainer";
+            this.CreatingForm += new System.EventHandler<EasyTabs.Model.FormEventArgs>(this.AppContainer_CreatingForm);
             this.ResumeLayout(false);
 
         }

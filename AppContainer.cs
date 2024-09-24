@@ -1,6 +1,7 @@
-﻿using EasyTabs;
+﻿using BrowserWithChromium.Properties;
+using EasyTabs;
 using EasyTabs.Drawing;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace BrowserWithChromium
 {
@@ -11,19 +12,12 @@ namespace BrowserWithChromium
             InitializeComponent();
             AeroPeekEnabled = true;
             TabRenderer = new ChromeTabRenderer(this);
-            //Icon = properties.Resources. img;
+            Icon = Icon.FromHandle(new Bitmap(Resources.CompassIcon).GetHicon());
         }
 
-        public override Task<TitleBarTab> CreateTab()
+        private void AppContainer_CreatingForm(object sender, EasyTabs.Model.FormEventArgs e)
         {
-
-            return new Task<TitleBarTab>(() =>
-            new TitleBarTab(this)
-            {
-                Content = new FormMain { Text = "New Tab" }
-            }
-            );
+            e.Form = new FormMain { Text = "New Tab" };
         }
-
     }
 }

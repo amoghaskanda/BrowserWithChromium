@@ -1,6 +1,8 @@
-﻿using CefSharp;
+﻿using BrowserWithChromium.Properties;
+using CefSharp;
 using CefSharp.WinForms;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BrowserWithChromium
@@ -18,6 +20,7 @@ namespace BrowserWithChromium
             browser = new ChromiumWebBrowser(textUrl.Text);
             browser.Dock = DockStyle.Fill;
             this.pContainer.Controls.Add(browser);
+            Icon = Icon.FromHandle(new Bitmap(Resources.CompassIcon).GetHicon());
         }
 
         private void ButtonGo_Click(object sender, EventArgs e)

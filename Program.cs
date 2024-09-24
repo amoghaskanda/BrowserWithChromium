@@ -14,11 +14,10 @@ namespace BrowserWithChromium
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new FormMain());
             AppContainer container = new AppContainer();
             container.Tabs.Add(new EasyTabs.TitleBarTab(container)
             {
-                Content = new FormMain { Text = "New Tab" }
+                Content = new FormMain() { Text = "New Tab" }
             });
             container.SelectedTabIndex = 0;
             TitleBarTabsApplicationContext applicationContext = new TitleBarTabsApplicationContext();
